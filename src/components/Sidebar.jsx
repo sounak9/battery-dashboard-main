@@ -34,7 +34,13 @@ const Sidebar = () => (
       ))}
     </div>
     <div className="flex-grow" /> {/* Spacer */}
-    <div className="flex flex-col items-center text-gray-400 hover:text-white cursor-pointer mt-8">
+    <div
+      className="flex flex-col items-center text-gray-400 hover:text-white cursor-pointer mt-8"
+      onClick={() => {
+        localStorage.removeItem("isAuthenticated");
+        window.location.href = "/login";
+      }}
+    >
       <MdLogout size={28} className="mb-2" />
       <span className="text-xs font-medium">Logout</span>
     </div>
